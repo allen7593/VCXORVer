@@ -61,6 +61,13 @@ void Dialog::generateSecret()
     painter.setFont(font);
     painter.drawText(0,80,"ALB48");
     painter.end();
+
+    for(int i=0;i<height;i++)
+        for(int j=0;j<width;j++)
+        {
+            if(secret->pixel(i,j)!=black && secret->pixel(i,j)!=white)
+                secret->setPixel(i,j,black);
+        }
 }
 
 void Dialog::generateS2()
